@@ -6,12 +6,12 @@
     <title>Solomonics Digital Health Advisory</title>
     
     <!-- SEO & Social Media Meta Tags -->
-    <meta name="description" content="Expert Digital Health Advisory and EMR Implementation Support in Addis Ababa, Ethiopia.">
+    <meta name="description" content="Expert Digital Health Advisory, Interoperability, and EMR Implementation Support in Addis Ababa, Ethiopia.">
     <meta property="og:title" content="Solomonics Digital Health Advisory">
-    <meta property="og:description" content="Capacity building and governance for digital health solutions.">
+    <meta property="og:description" content="Capacity building, framework optimization, and governance for digital health solutions.">
     <meta property="og:type" content="website">
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --ink: #0f1923;
@@ -33,10 +33,11 @@
             position: fixed; top:0; width:100%; background:rgba(245,240,232,0.95);
             backdrop-filter:blur(8px); border-bottom:1px solid var(--border);
             padding:0 5%; display:flex; align-items:center; justify-content:space-between;
-            height:64px; z-index:100;
+            height:70px; z-index:100;
         }
-        .nav-logo { font-family:'DM Serif Display',serif; font-size:1.25rem; color:var(--teal); letter-spacing:-0.02em; cursor: pointer; }
-        .nav-logo span { color:var(--amber); }
+        .nav-logo { font-family:'DM Serif Display',serif; font-size:1.35rem; color:var(--teal); letter-spacing:-0.01em; cursor: pointer; font-weight: 700; }
+        .nav-logo span { font-family:'DM Sans', sans-serif; font-weight: 300; font-size: 1.05rem; color: var(--ink); margin-left: 6px; letter-spacing: 0; }
+        .nav-logo em { color:var(--amber); font-style: normal; }
         .nav-links { display:flex; gap:2rem; align-items:center; }
         .nav-links a { text-decoration:none; color:var(--muted); font-size:0.9rem; font-weight:500; transition:color 0.2s; cursor: pointer; }
         .nav-links a:hover { color:var(--teal); }
@@ -108,12 +109,21 @@
         .wa-link { display:flex; align-items:center; gap:0.5rem; color:var(--teal); font-size:0.85rem; font-weight:600; text-decoration:none; justify-content:center; margin-top:0.5rem; }
         .wa-link svg { width:18px; height:18px; }
 
+        /* SUCCESS BANNER INLINE */
+        .success-banner {
+            display: none; background: rgba(26, 122, 110, 0.08); border: 1.5px dashed var(--teal);
+            padding: 1.5rem; border-radius: 8px; text-align: center; margin-top: 1rem;
+        }
+        .success-banner h4 { font-family: 'DM Serif Display', serif; color: var(--teal); font-size: 1.2rem; margin-bottom: 0.25rem; }
+        .success-banner p { font-size: 0.88rem; color: var(--ink); }
+
         /* TRUST BAR */
         .trust-bar {
             background:var(--ink); color:var(--white); padding:1.5rem 5%;
             display:flex; justify-content:center; gap:3rem; flex-wrap:wrap;
             font-size:0.85rem;
         }
+        .trust-bar-title { color: rgba(255,255,255,0.4); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
         .trust-item { display:flex; align-items:center; gap:0.5rem; }
         .trust-item .icon { font-size:1.1rem; }
 
@@ -133,7 +143,7 @@
         .service-card p { font-size:0.88rem; color:var(--muted); line-height:1.6; margin-bottom:1rem; }
         .service-price { font-size:0.8rem; font-weight:600; color:var(--teal); background:rgba(26,122,110,0.08); padding:0.3rem 0.75rem; border-radius:99px; display:inline-block; }
 
-        /* PROCESS */
+        /* PROCESS / FRAMEWORKS */
         .process { padding:80px 5%; background:var(--ink); color:var(--white); }
         .process-inner { max-width:1200px; margin:0 auto; }
         .process .section-tag { color:var(--teal-light); }
@@ -157,29 +167,28 @@
         .intake-submit:hover { background:var(--teal-light); }
         .intake-note { text-align:center; font-size:0.82rem; color:var(--muted); margin-top:1rem; }
 
+        /* MODAL POPUP SYSTEM */
+        .modal-backdrop {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 25, 37, 0.7); backdrop-filter: blur(4px);
+            z-index: 1000; align-items: center; justify-content: center; padding: 1.5rem;
+        }
+        .modal-card {
+            background: var(--white); padding: 3rem; border-radius: 16px; max-width: 500px;
+            width: 100%; box-shadow: 0 10px 50px rgba(0,0,0,0.25); text-align: center;
+            border: 1px solid var(--border); animation: modalIn 0.3s ease-out;
+        }
+        @keyframes modalIn { from { transform: translateY(15px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .modal-icon { width: 70px; height: 70px; background: rgba(26,122,110,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin: 0 auto 1.5rem; }
+        .modal-card h2 { font-family: 'DM Serif Display', serif; font-size: 2rem; margin-bottom: 0.75rem; color: var(--ink); }
+        .modal-card p { color: var(--muted); font-size: 0.95rem; line-net-height: 1.6; margin-bottom: 2rem; }
+        .modal-close-btn { background: var(--teal); color: var(--white); border: none; padding: 0.8rem 2rem; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.95rem; transition: background 0.2s; }
+        .modal-close-btn:hover { background: var(--teal-light); }
+
         /* FOOTER */
         footer { background:var(--ink); color:rgba(255,255,255,0.5); padding:3rem 5%; text-align:center; font-size:0.82rem; }
         footer strong { color:var(--white); }
         footer a { color:var(--teal-light); text-decoration:none; }
-
-        /* PAGE TRANSITIONS */
-        .page { display:none; }
-        .page.active { display:block; }
-        #home { display:block; }
-
-        /* CONFIRMATION PAGE */
-        .confirm-screen {
-            min-height:100vh; display:flex; align-items:center; justify-content:center;
-            flex-direction:column; text-align:center; padding:5%;
-        }
-        .confirm-icon { width:80px; height:80px; background:rgba(26,122,110,0.12); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:2.5rem; margin:0 auto 1.5rem; }
-        .confirm-screen h2 { font-family:'DM Serif Display',serif; font-size:2rem; margin-bottom:1rem; }
-        .confirm-screen p { color:var(--muted); max-width:460px; line-height:1.7; margin-bottom:2rem; }
-        .confirm-details { background:var(--white); border:1.5px solid var(--border); border-radius:12px; padding:1.5rem 2rem; text-align:left; min-width:320px; margin-bottom:2rem; }
-        .confirm-row { display:flex; justify-content:space-between; padding:0.5rem 0; border-bottom:1px solid var(--border); font-size:0.9rem; }
-        .confirm-row:last-child { border-bottom:none; }
-        .confirm-row span:first-child { color:var(--muted); }
-        .confirm-row span:last-child { font-weight:600; }
 
         @media(max-width:768px) {
             .hero { grid-template-columns:1fr; gap:2rem; padding:100px 5% 60px; text-align: center; }
@@ -195,31 +204,31 @@
 
 <!-- NAV -->
 <nav>
-    <div class="nav-logo" onclick="showPage('home')">Solomonics<span>.</span></div>
+    <div class="nav-logo" onclick="window.scrollTo({top:0, behavior:'smooth'})">Solomonics<em>.</em><span>Digital Health Advisory</span></div>
     <div class="nav-links">
-        <a onclick="showPage('home')">Home</a>
+        <a onclick="window.scrollTo({top:0, behavior:'smooth'})">Home</a>
         <a onclick="scrollToServices()">Services</a>
         <a onclick="scrollToIntake()">Get Started</a>
         <a class="nav-cta" onclick="scrollToIntake()">Book Free Call</a>
     </div>
 </nav>
 
-<!-- HOME PAGE -->
-<div id="home" class="page active">
+<!-- MAIN CONTENT WRAPPER -->
+<div id="home">
 
     <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-tag">Ethiopia's Digital Health Expert</div>
+            <div class="hero-tag">Enterprise Health Informatics Frameworks</div>
             <h1>Your EMR Works.<br><em>Your Team Should Too.</em></h1>
-            <p class="hero-sub">Capacity building, governance advisory, and implementation support for organizations building digital health solutions in Ethiopia.</p>
+            <p class="hero-sub">Capacity building, governance strategic planning, and interoperability optimization for organizations launching large-scale digital health solutions in Ethiopia.</p>
             <div class="hero-actions">
                 <a class="btn-primary" onclick="scrollToIntake()">Start Free Needs Assessment</a>
                 <a class="btn-secondary" onclick="scrollToServices()">See Services</a>
             </div>
             <div class="trust-badge">
                 <span class="dot"></span>
-                <span>Trusted by NGOs & health startups across Addis Ababa</span>
+                <span>Trusted by NGOs, implementers & health infrastructure partners across Addis Ababa</span>
             </div>
         </div>
 
@@ -231,20 +240,20 @@
                     <label>Organization Type</label>
                     <select name="Organization_Type" id="q-org" required>
                         <option value="">Select...</option>
-                        <option>NGO / International Org</option>
-                        <option>Government Health Facility</option>
-                        <option>Digital Health Startup</option>
-                        <option>Private Provider</option>
+                        <option>NGO / International Implementer</option>
+                        <option>Ministry / Public Health Facility</option>
+                        <option>Digital Health Startup / Ecosystem Partner</option>
+                        <option>Private Facility / Enterprise Provider</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Primary Challenge</label>
                     <select name="Main_Challenge" id="q-challenge" required>
                         <option value="">Select...</option>
-                        <option>Poor EMR adoption</option>
-                        <option>Weak data quality</option>
-                        <option>No governance framework</option>
-                        <option>Interoperability issues</option>
+                        <option>Poor Digital Health systems adoption</option>
+                        <option>Weak clinical data quality & metrics</option>
+                        <option>Absence of strategic governance frameworks</option>
+                        <option>Interoperability, PACS, or API blockers</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -252,43 +261,76 @@
                     <input type="text" name="Sender_Name" id="q-name" placeholder="Full Name" required />
                 </div>
                 <button type="submit" class="form-submit">Get My Advisory Match →</button>
+                <div class="success-banner" id="quickSuccess">
+                    <h4>✓ Assessment Cached!</h4>
+                    <p>Submission logged successfully. Let's build your pipeline strategy.</p>
+                </div>
                 <a href="https://wa.me/251928382275" class="wa-link" target="_blank">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    WhatsApp us directly
+                    WhatsApp Directly
                 </a>
             </form>
         </div>
     </section>
 
-    <!-- TRUST BAR -->
+    <!-- TRUST BAR / STANDARDS ARCHITECTURE -->
     <div class="trust-bar">
-        <div class="trust-item"><span class="icon">🏥</span><span>OpenMRS & Bahmni</span></div>
-        <div class="trust-item"><span class="icon">📊</span><span>DHIS2 & eHealth</span></div>
-        <div class="trust-item"><span class="icon">🎓</span><span>MD + Health Informatics</span></div>
+        <span class="trust-bar-title">Architectural Alignment:</span>
+        <div class="trust-item"><span class="icon">🏥</span><span>OpenMRS & Bahmni Ecosystems</span></div>
+        <div class="trust-item"><span class="icon">🔄</span><span>DICOM, PACS, & Interoperability Standards</span></div>
+        <div class="trust-item"><span class="icon">🤖</span><span>AI Diagnostics & RxNorm Context NLP</span></div>
     </div>
 
     <!-- SERVICES -->
     <section class="services" id="services">
-        <p class="section-tag">What We Do</p>
-        <h2 class="section-title">Three Ways We Help</h2>
+        <p class="section-tag">Core Offerings</p>
+        <h2 class="section-title">Strategic Intervention Streams</h2>
         <div class="services-grid">
             <div class="service-card" onclick="selectService('Capacity Building')">
                 <div class="service-icon">🎓</div>
                 <h3>Capacity Building</h3>
-                <p>Structured training for clinical staff and informaticians. Role-specific, co-designed with your team.</p>
+                <p>Tailored training matrices mapped out for medical officers, clinical teams, and health informaticians.</p>
                 <span class="service-price">From ETB 30,000</span>
             </div>
             <div class="service-card" onclick="selectService('Governance Advisory')">
                 <div class="service-icon">📋</div>
                 <h3>Governance Advisory</h3>
-                <p>Digital health strategies aligned to Ethiopia's MoH eHealth architecture.</p>
+                <p>Digital health structural architectures co-designed to align seamlessly with Ethiopia's Ministry of Health standards.</p>
                 <span class="service-price">From ETB 80,000</span>
             </div>
             <div class="service-card" onclick="selectService('Implementation Support')">
                 <div class="service-icon">⚙️</div>
                 <h3>Implementation Support</h3>
-                <p>Hands-on advisory for EMR deployment, adoption, and interoperability.</p>
+                <p>Hands-on clinical workflow configuration, integration optimization, and technical project management.</p>
                 <span class="service-price">From ETB 25,000 / mo</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS / METHODOLOGIES SECTION -->
+    <section class="process">
+        <div class="process-inner">
+            <p class="section-tag">Methodology</p>
+            <h2 class="section-title">Lean Frameworks, Robust Implementations</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-num">01</div>
+                    <div class="step-divider"></div>
+                    <h3>MoSCoW Prioritization</h3>
+                    <p>Isolating high-impact structural wins to guarantee health system adoption without operational bloat.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">02</div>
+                    <div class="step-divider"></div>
+                    <h3>Lean Canvas Architecture</h3>
+                    <p>De-risking technical architecture rollouts via data-driven value validation loops.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">03</div>
+                    <div class="step-divider"></div>
+                    <h3>Ikigai Core Strategy</h3>
+                    <p>Aligning clinical ecosystem demands, grant accountability targets, and national health goals.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -296,8 +338,8 @@
     <!-- INTAKE FORM -->
     <section class="intake" id="intake">
         <div class="intake-card">
-            <p class="section-tag">Book Your Free Call</p>
-            <h2 class="section-title">Request Your Needs Assessment</h2>
+            <p class="section-tag">Strategic Assessment</p>
+            <h2 class="section-title">Request a Comprehensive System Review</h2>
             <form action="https://formspree.io/f/xykovbyl" method="POST" id="intakeForm">
                 <div class="intake-grid">
                     <div class="form-group">
@@ -314,29 +356,29 @@
                     </div>
                     <div class="form-group">
                         <label>Phone / WhatsApp *</label>
-                        <input type="tel" name="Phone" id="i-phone" required />
+                        <input type="tel" name="Phone" id="i-phone" placeholder="e.g., +251928382275 or 09..." required />
                     </div>
                     <div class="form-group">
                         <label>Email *</label>
                         <input type="email" name="Email" id="i-email" required />
                     </div>
                     <div class="form-group">
-                        <label>Current EMR</label>
+                        <label>Core Core Health System Platform</label>
                         <select name="System" id="i-emr">
-                            <option>None / Planning</option>
-                            <option>OpenMRS</option>
-                            <option>Bahmni</option>
-                            <option>DHIS2</option>
+                            <option>None / Planning Phase</option>
+                            <option>OpenMRS / Bahmni Suite</option>
+                            <option>DHIS2 Architecture</option>
+                            <option>Custom Integrated Ecosystem</option>
                         </select>
                     </div>
                     <div class="form-group full">
-                        <label>Your Challenge *</label>
-                        <textarea name="Challenge" id="i-challenge" required></textarea>
+                        <label>Systemic Bottlenecks & Strategic Mandate *</label>
+                        <textarea name="Challenge" id="i-challenge" placeholder="Describe clinical adoption blockers, data architecture silos, or target objectives..." required></textarea>
                     </div>
-                    <input type="hidden" name="Selected_Service" id="i-service" value="General">
+                    <input type="hidden" name="Selected_Service" id="i-service" value="General Strategy">
                 </div>
                 <button type="submit" class="intake-submit">Request Free Assessment Call →</button>
-                <p class="intake-note">🔒 Confidential response guaranteed within 24 hours.</p>
+                <p class="intake-note">🔒 Data security and complete information confidentiality guaranteed.</p>
             </form>
         </div>
     </section>
@@ -349,39 +391,24 @@
     </footer>
 </div>
 
-<!-- CONFIRMATION PAGE -->
-<div id="confirm" class="page">
-    <div class="confirm-screen">
-        <div class="confirm-icon">✅</div>
-        <h2>Request Submitted!</h2>
-        <p>Solomon will review your needs and contact you within 24 hours to schedule your free assessment call.</p>
-        <div class="confirm-details">
-            <div class="confirm-row"><span>Name</span><span id="cd-name">—</span></div>
-            <div class="confirm-row"><span>Organization</span><span id="cd-org">—</span></div>
-            <div class="confirm-row"><span>Status</span><span>Processing</span></div>
-        </div>
-        <a href="https://wa.me/251928382275" class="btn-primary" target="_blank">Message on WhatsApp</a>
-        <br><br>
-        <a onclick="showPage('home')" style="color:var(--teal); cursor: pointer;">← Back to Home</a>
+<!-- GLOBAL POPUP MODAL -->
+<div class="modal-backdrop" id="successModal">
+    <div class="modal-card">
+        <div class="modal-icon">✅</div>
+        <h2>Submission Success!</h2>
+        <p>Your strategic needs data has been routed to our advisory desk. Solomon will analyze your systemic footprint and respond within 24 hours.</p>
+        <button class="modal-close-btn" onclick="closeModal()">Return to Advisory Portal</button>
     </div>
 </div>
 
 <script>
-    // Navigation Functions
-    function showPage(id) {
-        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-        document.getElementById(id).classList.add('active');
-        window.scrollTo(0,0);
-    }
-
+    // Smooth Scrolling Utilities
     function scrollToServices() {
-        showPage('home');
-        setTimeout(() => { document.getElementById('services').scrollIntoView({behavior:'smooth'}); }, 100);
+        document.getElementById('services').scrollIntoView({behavior:'smooth'});
     }
 
     function scrollToIntake() {
-        showPage('home');
-        setTimeout(() => { document.getElementById('intake').scrollIntoView({behavior:'smooth'}); }, 100);
+        document.getElementById('intake').scrollIntoView({behavior:'smooth'});
     }
 
     function selectService(service) {
@@ -389,14 +416,39 @@
         scrollToIntake();
     }
 
-    // Form Handling
-    async function handleForm(event, nameId, orgId) {
+    // Modal Control Functions
+    function openModal() {
+        document.getElementById('successModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+        document.getElementById('successModal').style.display = 'none';
+    }
+
+    // Strict Phone Format Checker Engine (+251... or 09...)
+    function validatePhoneNumber(phoneNumber) {
+        const cleaned = phoneNumber.replace(/\s+/g, '');
+        // Accepts +251 followed by 9 digits or 09/07 followed by 8 digits
+        const pattern = /^(\+251[79]\d{8}|0[79]\d{8})$/;
+        return pattern.test(cleaned);
+    }
+
+    // Consolidated AJAX Submission Handler
+    async function submitHealthForm(event, type) {
         event.preventDefault();
         const form = event.target;
         const button = form.querySelector('button');
         const data = new FormData(form);
 
-        button.textContent = "Sending...";
+        // Conditional Phone Format Validation Rule check if element exists
+        const phoneField = form.querySelector('input[type="tel"]');
+        if (phoneField && !validatePhoneNumber(phoneField.value)) {
+            alert("Invalid Phone Format. Please provide a standard Ethiopian number beginning with +2519..., +2517..., 09..., or 07...");
+            phoneField.focus();
+            return;
+        }
+
+        button.textContent = "Processing Blueprint...";
         button.disabled = true;
 
         try {
@@ -407,22 +459,28 @@
             });
 
             if (response.ok) {
-                document.getElementById('cd-name').textContent = document.getElementById(nameId).value;
-                document.getElementById('cd-org').textContent = document.getElementById(orgId).value;
-                showPage('confirm');
+                form.reset();
+                if (type === 'quick') {
+                    // Display inline visual feedback anchor inside card component
+                    document.getElementById('quickSuccess').style.display = 'block';
+                    setTimeout(() => { openModal(); }, 400);
+                } else {
+                    openModal();
+                }
             } else {
-                alert("Submission failed. Please try again or use WhatsApp.");
+                alert("Gateway structural block encountered. Please try your advisory application again or route manually via WhatsApp link.");
             }
         } catch (error) {
-            alert("Error connecting. Check your internet.");
+            alert("Connection synchronization timeout. Verify local network connection parameter state.");
         } finally {
-            button.textContent = "Submit";
+            button.textContent = type === 'quick' ? "Get My Advisory Match →" : "Request Free Assessment Call →";
             button.disabled = false;
         }
     }
 
-    document.getElementById('quickForm').addEventListener('submit', (e) => handleForm(e, 'q-name', 'q-org'));
-    document.getElementById('intakeForm').addEventListener('submit', (e) => handleForm(e, 'i-name', 'i-org'));
+    // Attach Event Listeners
+    document.getElementById('quickForm').addEventListener('submit', (e) => submitHealthForm(e, 'quick'));
+    document.getElementById('intakeForm').addEventListener('submit', (e) => submitHealthForm(e, 'intake'));
 </script>
 
 </body>
